@@ -1,9 +1,9 @@
 <h1>SEIR News</h1>
 
-<ul>
+<ul style="line-height: 160%">
     {{#each news}}
-    <li><a href="{{this.id}}">{{this.title}}</a></li>
+    <li style="list-style:none"><a style="color:white"href="{{this.id}}">{{this.title}}</a></li>
     {{/each}}
 </ul>
 
-<a href="/new">Post New Story</a>
+<a style="color:black; border: 1px solid black; padding:10px; text-decoration:none" href="/new">Post New Story</a>

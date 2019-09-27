@@ -4,11 +4,13 @@ const NewsSchema = new mongoose.Schema({
     url: String,
     title: String,
     description: String,
-    date: Date,
+    date: {type:Date, default: Date.now},
+    comment: {type: Object, default: null }
 },
 {
     timestamps: true
 });
+
 
 const News = mongoose.model('News', NewsSchema)
 

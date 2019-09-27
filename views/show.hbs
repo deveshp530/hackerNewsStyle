@@ -1,11 +1,27 @@
+
+
 <h2>{{title}}</h2>
 
 <p>{{description}}</p>
 
-<p>Read more at the article <a href="{{url}}" target="_blank">link</a>!</p>
+<p>Read more at the article <a style="color:black" href="{{url}}" target="_blank">link</a>!</p>
 
 <p>Date posted: {{date}}</p>
 
 <form action="/{{id}}?_method=delete" method="POST">
 <input type="submit" value="Delete">
 </form>
+
+<h3>Post a Comment</h3>
+<form action="/{{id}}" method="POST">
+<label for="author">Author</label>
+<input type="text" name="author">
+<label for="text">Comment</label>
+<input type="text" name="text" placeholder="under construction">
+<input type="submit" value="Post Comment" >
+</form>
+<ul>
+    {{#each comment}}
+    <li>{{text}}</li>
+    {{/each}}
+</ul>
