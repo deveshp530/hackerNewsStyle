@@ -8,22 +8,23 @@ router.delete('/:id',(req,res) =>{
     News.findOneAndDelete({_id: req.params.id}).then(()=> 
     res.redirect('/'))});
 
+
 router.post('/', (req, res) => {
     News.create(req.body) .then(news => {
         res.redirect('/');
     })
 })
 
-router.post('/:id',(req,res) =>{
-    Comments.create(req.body).then(comment => {
-        console.log(comment);
-        News.findOneAndUpdate({_id: req.params.id}, {$set: {comment: comment }})
-    }).then( news =>{
-        console.log(news);
-        res.redirect('/:id');
-    }).catch(err => console.error(err));
-})
+// router.post('/:id',(req,res) =>{
+//     Comments.create(req.body).then(comment => {
+//         console.log(comment);
+//         News.findOneAndUpdate({_id: req.params.id}, {$push: {children: {comment}}}).then( news =>{
+//         console.log(news);
+//         res.redirect('/:id');
+//     }).catch(err => console.error(err));
+// })});
 
+//home page to list items in seeds.json
 router.get('/', (req, res) => {
     News.find({}).sort({date: -1}).then(news => {
         res.render('index', { news });

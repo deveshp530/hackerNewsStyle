@@ -1,3 +1,30 @@
 body{
-    background-color: red;
+    background-color: darkgray;
+    font-family:Tahoma;
+    color:white;
+}
+
+#post-new{
+    color:black; 
+    border: 1px solid black; 
+    padding:10px; 
+    text-decoration:none
+}
+
+#post-new:hover{
+    background:white;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    line-height: 200%;
+}
+
+a:hover {
+    background: white;
 }
